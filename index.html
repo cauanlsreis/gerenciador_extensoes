@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Mentor | Browser extensions manager UI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__logo">
+      <img src="./assets/images/logo.svg" alt="Extensions Logo" />
+    </div>
+    <button class="header__search-btn" id="theme-toggle-btn">
+      <img id="theme-toggle-icon" src="./assets/images/icon-sun.svg" alt="Tema" />
+    </button>
+  </header>
+
+  <main>
+    <h1 class="main-title">Extensions List</h1>
+    <div class="filters">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="active">Active</button>
+      <button class="filter" data-filter="inactive">Inactive</button>
+    </div>
+    <div class="extensions-grid">
+      <div class="extension-card active">
+        <div class="extension-card__icon">
+          <img src="./assets/images/logo-devlens.svg" alt="DevLens" />
+        </div>
+        <div class="extension-card__content">
+          <h2>DevLens</h2>
+          <p>Quickly inspect page layouts and visualize element boundaries.</p>
+        </div>
+        <button class="remove-btn">Remove</button>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="extension-card active">
+        <div class="extension-card__icon">
+          <img src="./assets/images/logo-style-spy.svg" alt="StyleSpy" />
+        </div>
+        <div class="extension-card__content">
+          <h2>StyleSpy</h2>
+          <p>Instantly analyze and copy CSS from any webpage element.</p>
+        </div>
+        <button class="remove-btn">Remove</button>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="extension-card">
+        <div class="extension-card__icon">
+          <img src="./assets/images/logo-speed-boost.svg" alt="SpeedBoost" />
+        </div>
+        <div class="extension-card__content">
+          <h2>SpeedBoost</h2>
+          <p>Optimizes browser resource usage to accelerate page loading.</p>
+        </div>
+        <button class="remove-btn">Remove</button>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="extension-card">
+        <div class="extension-card__icon">
+          <img src="./assets/images/logo-json-wizard.svg" alt="JSONWizard" />
+        </div>
+        <div class="extension-card__content">
+          <h2>JSONWizard</h2>
+          <p>Formats, validates, and prettifies JSON responses in-browser.</p>
+        </div>
+        <button class="remove-btn">Remove</button>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="extension-card active">
+        <div class="extension-card__icon">
+          <img src="./assets/images/logo-tab-master-pro.svg" alt="TabMaster Pro" />
+        </div>
+        <div class="extension-card__content">
+          <h2>TabMaster Pro</h2>
+          <p>Organizes browser tabs into groups and sessions.</p>
+        </div>
+        <button class="remove-btn">Remove</button>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="extension-card">
+        <div class="extension-card__icon">
+          <img src="./assets/images/logo-viewport-buddy.svg" alt="ViewportBuddy" />
+        </div>
+        <div class="extension-card__content">
+          <h2>ViewportBuddy</h2>
+          <p>Simulates various screen resolutions directly within the browser.</p>
+        </div>
+        <button class="remove-btn">Remove</button>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="extension-card active">
+        <div class="extension-card__icon">
+          <img src="./assets/images/logo-markup-notes.svg" alt="Markup Notes" />
+        </div>
+        <div class="extension-card__content">
+          <h2>Markup Notes</h2>
+          <p>Enables annotation and notes directly onto webpages for collaborative debugging.</p>
+        </div>
+        <button class="remove-btn">Remove</button>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="extension-card">
+        <div class="extension-card__icon">
+          <img src="./assets/images/logo-grid-guides.svg" alt="GridGuides" />
+        </div>
+        <div class="extension-card__content">
+          <h2>GridGuides</h2>
+          <p>Overlay customizable grids and alignment guides on any webpage.</p>
+        </div>
+        <button class="remove-btn">Remove</button>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="extension-card active">
+        <div class="extension-card__icon">
+          <img src="./assets/images/logo-palette-picker.svg" alt="Palette Picker" />
+        </div>
+        <div class="extension-card__content">
+          <h2>Palette Picker</h2>
+          <p>Instantly extracts color palettes from any webpage.</p>
+        </div>
+        <button class="remove-btn">Remove</button>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="extension-card active">
+        <div class="extension-card__icon">
+          <img src="./assets/images/logo-link-checker.svg" alt="LinkChecker" />
+        </div>
+        <div class="extension-card__content">
+          <h2>LinkChecker</h2>
+          <p>Scans and highlights broken links on any page.</p>
+        </div>
+        <button class="remove-btn">Remove</button>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="extension-card">
+        <div class="extension-card__icon">
+          <img src="./assets/images/logo-dom-snapshot.svg" alt="DOM Snapshot" />
+        </div>
+        <div class="extension-card__content">
+          <h2>DOM Snapshot</h2>
+          <p>Capture and export DOM structures quickly.</p>
+        </div>
+        <button class="remove-btn">Remove</button>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="extension-card">
+        <div class="extension-card__icon">
+          <img src="./assets/images/logo-console-plus.svg" alt="ConsolePlus" />
+        </div>
+        <div class="extension-card__content">
+          <h2>ConsolePlus</h2>
+          <p>Enhanced developer console with advanced filtering and logging.</p>
+        </div>
+        <button class="remove-btn">Remove</button>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script>
+  // Troca de tema claro/escuro
+  const root = document.documentElement;
+  const btn = document.getElementById('theme-toggle-btn');
+  const icon = document.getElementById('theme-toggle-icon');
+  let isLight = false;
+
+  const setLightTheme = () => {
+    root.style.setProperty('--bg-main', '#f3f7fa');
+    root.style.setProperty('--bg-card', '#fff');
+    root.style.setProperty('--bg-header', '#fff');
+    root.style.setProperty('--color-primary', '#232c4b');
+    root.style.setProperty('--color-secondary', '#232c4b');
+    root.style.setProperty('--color-accent', '#ff5e5e');
+    root.style.setProperty('--color-btn', '#fff');
+    root.style.setProperty('--color-btn-hover', '#ff5e5e');
+    root.style.setProperty('--card-title', '#232c4b');
+    root.style.setProperty('--card-desc', '#3a415c');
+    icon.src = './assets/images/icon-moon.svg';
+    icon.alt = 'Tema escuro';
+    document.body.style.background = 'linear-gradient(135deg, #eaf3fa 0%, #f3f7fa 100%)';
+  };
+
+  const setDarkTheme = () => {
+    root.style.setProperty('--bg-main', '#181e2a');
+    root.style.setProperty('--bg-card', '#232c4b');
+    root.style.setProperty('--bg-header', '#232c4b');
+    root.style.setProperty('--color-primary', '#fff');
+    root.style.setProperty('--color-secondary', '#b6e3f4');
+    root.style.setProperty('--color-accent', '#ff5e5e');
+    root.style.setProperty('--color-btn', '#232c4b');
+    root.style.setProperty('--color-btn-hover', '#ff5e5e');
+    root.style.setProperty('--card-title', '#fff');
+    root.style.setProperty('--card-desc', '#b6e3f4');
+    icon.src = './assets/images/icon-sun.svg';
+    icon.alt = 'Tema claro';
+    document.body.style.background = 'linear-gradient(135deg, #181e2a 0%, #232c4b 100%)';
+  };
+
+  btn.addEventListener('click', () => {
+    isLight = !isLight;
+    if (isLight) setLightTheme();
+    else setDarkTheme();
+  });
+
+  // --- FILTRO DE EXTENSÕES ---
+  const filterButtons = document.querySelectorAll('.filter');
+  const extensionCards = document.querySelectorAll('.extension-card');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Troca classe ativa
+      filterButtons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const filter = this.getAttribute('data-filter');
+
+      extensionCards.forEach(card => {
+        const checkbox = card.querySelector('.switch input[type="checkbox"]');
+        if (filter === 'all') {
+          card.style.display = '';
+        } else if (filter === 'active') {
+          card.style.display = checkbox.checked ? '' : 'none';
+        } else if (filter === 'inactive') {
+          card.style.display = !checkbox.checked ? '' : 'none';
+        }
+      });
+    });
+  });
+
+  // --- REMOVER EXTENSÃO ---
+  document.querySelectorAll('.remove-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const card = this.closest('.extension-card');
+      if (card) card.remove();
+    });
+  });
+  </script>
+</body>
+</html>
+

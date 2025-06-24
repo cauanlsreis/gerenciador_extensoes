@@ -1,0 +1,306 @@
+:root {
+  --bg-main: #181e2a;
+  --bg-card: #232c4b;
+  --bg-card-alt: #232c4b;
+  --bg-header: #232c4b;
+  --bg-search: #232c4b;
+  --color-primary: #fff;
+  --color-secondary: #b6e3f4;
+  --color-accent: #ff5e5e;
+  --color-active: #ff5e5e;
+  --color-inactive: #7a7f9a;
+  --color-btn: #232c4b;
+  --color-btn-hover: #ff5e5e;
+  --border-radius: 16px;
+  --transition: 0.2s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #181e2a 0%, #232c4b 100%);
+  color: var(--color-primary);
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-header);
+  padding: 16px 40px;
+  border-radius: 16px;
+  margin: 32px 40px 48px 40px; /* Alinha com os cards */
+  max-width: none;
+  width: auto;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.header__logo img {
+  width: 150px;
+  height: 64px;
+  display: block;
+}
+
+.header__search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-search);
+  border-radius: var(--border-radius);
+  padding: 4px 12px;
+}
+
+.header__search input {
+  background: transparent;
+  border: none;
+  color: var(--color-primary);
+  font-size: 1rem;
+  outline: none;
+  padding: 8px 0;
+  width: 220px;
+}
+
+.header__search-btn {
+  background: #232c4b;
+  border: 2px solid #3a415c;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+
+.header__search-btn:hover {
+  border-color: var(--color-accent);
+}
+
+.header__search-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.main-title {
+  margin: 0 0 24px 40px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.filters {
+  display: flex;
+  gap: 16px;
+  margin: 0 0 32px 40px;
+}
+
+.filter {
+  background: #232c4b;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 8px 28px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.filter.active, .filter:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.extensions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  padding: 0 40px 40px 40px;
+}
+
+.extension-card {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "icon content"
+    "remove switch";
+  gap: 0 16px;
+  padding: 20px 20px 20px 20px;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.15);
+  min-height: 120px;
+  align-items: start;
+  position: relative;
+  row-gap: 28px; /* Adiciona um espaço maior entre as linhas do grid */
+}
+
+.extension-card__icon {
+  grid-area: icon;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  margin: 0;
+  margin-top: 2px;
+  padding: 0;
+}
+
+.extension-card__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+  background: none;
+  box-shadow: none;
+}
+
+.extension-card__content {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.extension-card__content h2 {
+  margin: 0 0 6px 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--card-title, #fff);
+}
+
+.extension-card__content p {
+  margin: 0;
+  color: var(--card-desc, #b6e3f4);
+  font-size: 0.98rem;
+  font-weight: 400;
+  word-break: break-word;
+}
+
+.extension-card__actions {
+  display: contents; /* Remove o wrapper visual, usa grid para posicionar os botões */
+}
+
+.remove-btn {
+  grid-area: remove;
+  background: transparent;
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  border-radius: 24px;
+  padding: 6px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+  margin: 0;
+  align-self: start;
+  justify-self: start;
+}
+
+.remove-btn:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.switch {
+  grid-area: switch;
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  margin-left: 0;
+  align-self: start;
+  justify-self: end;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #3a415c;
+  border-radius: 24px;
+  transition: background-color var(--transition);
+}
+
+.switch input:checked + .slider {
+  background-color: var(--color-accent);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform var(--transition);
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: #b6e3f4;
+  margin-bottom: 16px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 600px) {
+  .extension-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "icon"
+      "content"
+      "remove"
+      "switch";
+    gap: 10px 0;
+    padding: 16px;
+  }
+  .extension-card__icon {
+    margin: 0 auto;
+  }
+  .remove-btn, .switch {
+    justify-self: stretch;
+    width: 100%;
+  }
+}
+
+/* Para garantir espaçamento extra só entre os botões e o conteúdo acima */
+@media (min-width: 601px) {
+  .remove-btn, .switch {
+    margin-top: 10px;
+  }
+}
